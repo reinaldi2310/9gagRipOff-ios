@@ -15,23 +15,14 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var postImage: UIImageView!
     @IBOutlet var likesLabel: UILabel!
     @IBOutlet var commentsLabel: UILabel!
-    
+
     static let identifier = "TableViewCell"
     static func nib() -> UINib {
         return UINib(nibName: "TableViewCell", bundle: nil)
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
+
     public func configure(object: Post){
+        userImage.layer.cornerRadius = userImage.frame.height / 2
         self.userImage.image = UIImage(named: object.userImage)
         self.userNameLabel.text = "\(object.userName)"
         self.postImage.image = UIImage(named: object.postImage)
