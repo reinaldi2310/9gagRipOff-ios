@@ -18,7 +18,7 @@ class TableViewCell: UITableViewCell {
 
     static let identifier = "TableViewCell"
     static func nib() -> UINib {
-        return UINib(nibName: "TableViewCell", bundle: nil)
+        return UINib(nibName: identifier, bundle: nil)
     }
 
     public func configure(object: Post){
